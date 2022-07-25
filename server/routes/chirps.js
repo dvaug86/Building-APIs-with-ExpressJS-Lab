@@ -1,7 +1,6 @@
 //imports
 const express = require('express');
 const chirpstore = require('../chirpstore');
-const chirpStore = require('../chirpstore');
 
 //create router
 let router = express.Router();
@@ -15,13 +14,13 @@ router.get('/:id?', (req, res) => {
     if (id) {
         res.json(chirpstore.GetChirp(id));
     } else {
-        res.send(chirpStore.GetChirps());
+        res.send(chirpstore.GetChirps());
     }
 });
 
 //Post method
 router.post('/', (req, res) => {
-    chirpStore.CreateChirp(req.body);
+    chirpstore.CreateChirp(req.body);
     res.sendStatus(200);
 });
 
